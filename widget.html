@@ -1,0 +1,664 @@
+<script language="javascript" type="text/javascript">
+
+function dropdownlist(listindex)
+
+{
+
+
+
+document.formname.subdocument.options.length = 0;
+
+switch (listindex)
+
+{
+
+
+
+case "Academic Documents" :
+
+document.formname.subdocument.options[0]=new Option("Select Sub-Document","");
+
+document.formname.subdocument.options[1]=new Option("Bar certificates","Bar certificates");
+
+document.formname.subdocument.options[2]=new Option("Degrees","Degrees");
+
+document.formname.subdocument.options[3]=new Option("Diplomas","Diplomas");
+
+document.formname.subdocument.options[4]=new Option("Official transcripts","Official transcripts");
+
+document.formname.subdocument.options[5]=new Option("Medical practice licenses","Medical practice licenses");
+
+document.formname.subdocument.options[6]=new Option("School Accreditation letters","School Accreditation letters");
+
+document.formname.subdocument.options[7]=new Option("Statements of study major","Statements of study major");
+
+document.formname.subdocument.options[8]=new Option("Verification letters","Verification letters"); 
+
+
+break;
+
+case "Corporate Documents" :
+
+document.formname.subdocument.options[0]=new Option("Select Sub-Document","");
+
+document.formname.subdocument.options[1]=new Option("Affidavits","Affidavits");
+
+document.formname.subdocument.options[2]=new Option("Agency agreements","Agency agreements");
+
+document.formname.subdocument.options[3]=new Option("Authorizations of agent","Authorizations of agent");
+
+document.formname.subdocument.options[4]=new Option("Board of directors","Board of directors");
+
+document.formname.subdocument.options[5]=new Option("Business licenses","Business licenses");
+
+document.formname.subdocument.options[6]=new Option("Cash balance statements","Cash balance statements");
+
+document.formname.subdocument.options[7]=new Option("Certificates of authenticity","Certificates of authenticity");
+
+document.formname.subdocument.options[8]=new Option("Certificates of conformity","Certificates of conformity");
+
+document.formname.subdocument.options[9]=new Option("Certified copies of US passport","Certified copies of US passport");
+
+document.formname.subdocument.options[10]=new Option("Company bylaws","Company bylaws");
+
+document.formname.subdocument.options[11]=new Option("Declaration letters","Declaration letters");
+
+document.formname.subdocument.options[12]=new Option("Deeds of assignment","Deeds of assignment");
+
+document.formname.subdocument.options[13]=new Option("Financial statements","Financial statements");
+
+document.formname.subdocument.options[14]=new Option("Good standing certificates","Good standing certificates");
+
+document.formname.subdocument.options[15]=new Option("ISO certificates","ISO certificates");
+
+document.formname.subdocument.options[16]=new Option("Manufacturing licenses","Manufacturing licenses");
+
+document.formname.subdocument.options[17]=new Option("Minutes of board meeting","Minutes of board meeting");
+
+document.formname.subdocument.options[18]=new Option("Powers of attorney","Powers of attorney");
+
+document.formname.subdocument.options[19]=new Option("Shelf life certificates","Shelf life certificates");
+
+document.formname.subdocument.options[20]=new Option("Written statements","Written statements");
+
+break;
+
+
+
+case "Personal Documents" :
+
+document.formname.subdocument.options[0]=new Option("Select Sub-Document","");
+
+document.formname.subdocument.options[1]=new Option("Birth certificates","Birth certificates");
+
+document.formname.subdocument.options[2]=new Option("Certificates of no marriage record","Certificates of no marriage record");
+
+document.formname.subdocument.options[3]=new Option("Certificates report of birth abroad","Certificates report of birth abroad");
+
+document.formname.subdocument.options[4]=new Option("Change of names","Change of names");
+
+document.formname.subdocument.options[5]=new Option("Children’s travel consent letters","Children’s travel consent letters");
+
+document.formname.subdocument.options[6]=new Option("Copy of employment contracts","Copy of employment contracts");
+
+document.formname.subdocument.options[7]=new Option("Copy of passports","Copy of passports");
+
+document.formname.subdocument.options[8]=new Option("Criminal records","Criminal records");
+
+document.formname.subdocument.options[9]=new Option("Death certificates","Death certificates");
+
+document.formname.subdocument.options[10]=new Option("Divorce certificates","Divorce certificates");
+
+document.formname.subdocument.options[11]=new Option("Driver licenses","Driver licenses");
+
+document.formname.subdocument.options[12]=new Option("Marital status","Marital status");
+
+document.formname.subdocument.options[13]=new Option("Marriage certificates","Marriage certificates");
+
+document.formname.subdocument.options[14]=new Option("Medical records","Medical records");
+
+document.formname.subdocument.options[15]=new Option("Powers of attorney","Powers of attorney");
+
+document.formname.subdocument.options[16]=new Option("Single status affidavits","Single status affidavits");
+
+document.formname.subdocument.options[17]=new Option("Letter of references","Letter of references");
+
+break;
+
+case "Export Documents" :
+
+document.formname.subdocument.options[0]=new Option("Select Sub-Document","");
+
+document.formname.subdocument.options[1]=new Option("Bills of lading","Bills of lading");
+
+document.formname.subdocument.options[2]=new Option("Certificates of analysis","Certificates of analysis");
+
+document.formname.subdocument.options[3]=new Option("Certificates of origin","Certificates of origin");
+
+document.formname.subdocument.options[4]=new Option("Commercial invoices","Commercial invoices");
+
+document.formname.subdocument.options[5]=new Option("Freezing certificates","Freezing certificates");
+
+document.formname.subdocument.options[6]=new Option("Packing lists","Packing lists");
+
+document.formname.subdocument.options[7]=new Option("Price lists","Price lists");
+
+document.formname.subdocument.options[8]=new Option("Radiation certificates","Radiation certificates");   
+
+break;
+
+case "Select Category" :
+
+document.formname.subdocument.options[0]=new Option("Select Sub-Document","");
+
+break;
+
+}
+
+return true;
+
+}
+
+
+jQuery(function($){
+	$('.blurfocus').each(function() {
+		var default_value = this.value;
+		$(this).focus(function() {
+			if(this.value == default_value) {
+				this.value = '';
+			}
+		});
+		$(this).blur(function() {
+				if(this.value == '') {
+				this.value = default_value;
+			}
+		});
+	});
+});
+
+</script>
+
+<table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>
+<?php if(isset($_GET["message"])){ ?>
+				<div style="display: none;">
+                	<p style="font-size:18px; padding-left:5px;">Thank you for submitting your information, please check your email for further instructions. </p>
+                    <p style="font-size:18px; padding-left:5px;">If you need immediate assistance please contact us at 202.741.5636.</p>
+                    <p style="font-size:18px; padding-left:5px;">If you are looking for a Rush Apostille please click <a href="http://topflitelegalization.com/rush" style="color:#ee1b24">here</a>.</p>
+                    </div>
+<?php } else { ?>
+
+<div>
+
+<p style="font-size:18px; padding-left:5px; "><strong>Get your free quote now!</strong></p>
+
+<form id="formname" name="formname" method="post" action="formmail_na.php" >
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+
+<tr>
+
+								<td width="59%" align="left" valign="middle">
+
+<select id="countries" name="countries">
+
+<option value="Afghanistan">Afghanistan</option>
+
+<option value="Algeria">Albania </option>
+
+<option value="Algeria">Algeria</option>
+
+<option value="Angola">Angola</option>
+
+<option value="Antigua">Antigua</option> 
+
+<option value="Argentina">Argentina</option>
+
+<option value="Armenia">Armenia</option>
+
+<option value="Australia">Australia</option>
+
+<option value="Austria">Austria</option>
+
+<option value="Azerbaijan">Azerbaijan</option>
+
+<option value="Bahamas">Bahamas</option>
+
+<option value="Bahrain">Bahrain</option> 
+
+<option value="Bangladesh">Bangladesh</option> 
+
+<option value="Barbados">Barbados</option> 
+
+<option value="Belarus">Belarus</option>
+
+<option value="Belgium">Belgium</option>
+
+<option value="Belize">Belize</option>
+
+<option value="Benin">Benin</option> 
+
+<option value="BMU">Bermuda</option>
+
+<option value="Bhutan">Bhutan</option> 
+
+<option value="Bolivia">Bolivia</option> 
+
+<option value="Bosnia Herzegovina">Bosnia Herzegovina</option>
+
+<option value="Botswana">Botswana</option>
+
+<option value="Brazil">Brazil</option> 
+
+<option value="Bulgaria">Bulgaria</option>
+
+<option value="Burkina">Burkina</option> 
+
+<option value="Burundi">Burundi</option> 
+
+<option value="Cambodia">Cambodia</option> 
+
+<option value="Cameroon">Cameroon</option> 
+
+<option value="Canada">Canada</option>
+
+<option value="Cape Verde">Cape Verde</option>
+
+<option value="Central African Republic">Central African Republic</option>
+
+<option value="Chad">Chad</option> 
+
+<option value="Chile">Chile</option> 
+
+<option value="China">China</option> 
+
+<option value="Colombia">Colombia</option>
+
+<option value="Comoros">Comoros</option>
+
+<option value="Congo">Congo</option> 
+
+<option value="Congo Democratic Republic">Congo Democratic Republic</option> 
+
+<option value="Costa Rica">Costa Rica</option>
+
+<option value="C&ocirc;te d&rsquo; Ivoire">C&ocirc;te d&rsquo; Ivoire</option> 
+
+<option value="Croatia">Croatia</option> 
+
+<option value="Cuba">Cuba</option> 
+
+<option value="Cyprus">Cyprus</option>
+
+<option value="Czech Republic">Czech Republic</option>
+
+<option value="Denmark">Denmark</option> 
+
+<option value="Djibouti">Djibouti</option> 
+
+<option value="Dominican Republic">Dominican Republic</option>
+
+<option value="East Timor">East Timor</option>
+
+<option value="Ecuador">Ecuador</option> 
+
+<option value="East Timor">East Timor</option> 
+
+<option value="Egypt">Egypt</option> 
+
+<option value="El Salvador">El Salvador</option> 
+
+<option value="Equatorial Guinea">Equatorial Guinea</option> 
+
+<option value="Eritrea">Eritrea</option>
+
+<option value="Estonia">Estonia </option> 
+
+<option value="Ethiopia">Ethiopia</option> 
+
+<option value="Fiji">Fiji</option> 
+
+<option value="Finland">Finland</option> 
+
+<option value="France">France</option> 
+
+<option value="Gabon">Gabon</option> 
+
+<option value="Gambia">Gambia</option> 
+
+<option value="Georgia">Georgia</option> 
+
+<option value="Germany">Germany</option> 
+
+<option value="Ghana">Ghana</option> 
+
+<option value="Greece">Greece</option> 
+
+<option value="Guatemala">Guatemala</option> 
+
+<option value="Guinea">Guinea</option> 
+
+<option value="Guinea Bissau">Guinea Bissau</option> 
+
+<option value="Guyana">Guyana</option> 
+
+<option value="Haiti">Haiti</option> 
+
+<option value="Honduras">Honduras</option>
+
+<option value="Hong Kong">Hong Kong</option>
+
+<option value="Hungary">Hungary</option>
+
+<option value="Iceland">Iceland</option>
+
+<option value="India">India</option>
+
+<option value="Indonesia">Indonesia</option> 
+
+<option value="Iran">Iran</option> 
+
+<option value="Iraq">Iraq</option>
+
+<option value="Irelan">Irelan</option>  
+
+<option value="Israel">Israel</option> 
+
+<option value="Italy">Italy</option> 
+
+<option value="Jamaica">Jamaica</option>  
+
+<option value="Japan">Japan</option> 
+
+<option value="Jordan">Jordan</option> 
+
+<option value="Kazakhstan">Kazakhstan</option> 
+
+<option value="Kenya">Kenya</option> 
+
+<option value="Kiribati">Kiribati</option> 
+
+<option value="Korea">Korea</option> 
+
+<option value="Kuwait">Kuwait</option>
+
+<option value="Kyrgyzstan">Kyrgyzstan</option> 
+
+<option value="Laos">Laos</option>  
+
+<option value="Latvia">Latvia</option> 
+
+<option value="Lebanon">Lebanon</option> 
+
+<option value="Lesotho">Lesotho</option> 
+
+<option value="Liberia">Liberia</option> 
+
+<option value="Libya">Libya</option> 
+
+<option value="Liechtenstein">Liechtenstein</option> 
+
+<option value="Lithuania">Lithuania</option> 
+
+<option value="Luxembourg">Luxembourg</option>
+
+<option value="Macedonia">Macedonia</option> 
+
+<option value="Madagascar">Madagascar</option> 
+
+<option value="Malawi">Malawi</option> 
+
+<option value="Malaysia">Malaysia</option> 
+
+<option value="Maldives">Maldives</option> 
+
+<option value="Mali">Mali</option>
+
+<option value="Malta">Malta</option>
+
+<option value="Marshall Islands">Marshall Islands</option>
+
+<option value="Mauritania">Mauritania</option> 
+
+<option value="Mauritius">Mauritius</option> 
+
+<option value="Mexico">Mexico</option> 
+
+<option value="Micronesia">Micronesia</option> 
+
+<option value="Moldova">Moldova</option> 
+
+<option value="Monaco">Monaco</option> 
+
+<option value="Mongolia">Mongolia</option> 
+
+<option value="Morocco">Morocco</option> 
+
+<option value="Mozambique">Mozambique</option> 
+
+<option value="Myanmar">Myanmar</option>  
+
+<option value="Namibia">Namibia</option> 
+
+<option value="Nauru">Nauru</option> 
+
+<option value="Nepal">Nepal</option> 
+
+<option value="Netherlands">Netherlands</option> 
+
+<option value="New Zealand">New Zealand</option> 
+
+<option value="Nicaragua">Nicaragua</option> 
+
+<option value="Niger">Niger</option> 
+
+<option value="Nigeria">Nigeria</option> 
+
+<option value="Norway">Norway</option> 
+
+<option value="North Korea">North Korea</option> 
+
+<option value="Oman">Oman</option> 
+
+<option value="Pakistan">Pakistan</option> 
+
+<option value="Palau">Palau</option> 
+
+<option value="Panama">Panama</option> 
+
+<option value="Palestine">Palestine</option> 
+
+<option value="Paraguay">Paraguay</option> 
+
+<option value="Peru">Peru</option> 
+
+<option value="Philippines">Philippines</option> 
+
+<option value="Poland">Poland</option> 
+
+<option value="Portugal">Portugal</option> 
+
+<option value="Puerto Rico">Puerto Rico</option>
+
+<option value="Qatar">Qatar</option>
+
+<option value="Romania">Romania</option>
+
+<option value="Russian Federation">Russian Federation</option> 
+
+<option value="Saudi Arabia">Saudi Arabia</option> 
+
+<option value="Senegal">Senegal</option>
+
+<option value="Serbia">Serbia</option>
+
+<option value="Seychelles">Seychelles</option> 
+
+<option value="Sierra Leone">Sierra Leone</option> 
+
+<option value="Singapore">Singapore</option> 
+
+<option value="Slovakia">Slovakia</option> 
+
+<option value="Slovenia">Slovenia</option> 
+
+<option value="Solomon">Solomon Islands</option> 
+
+<option value="Somalia">Somalia</option> 
+
+<option value="South Africa">South Africa</option>  
+
+<option value="Spain">Spain</option> 
+
+<option value="Sri Lanka">Sri Lanka</option> 
+
+<option value="Sudan">Sudan</option> 
+
+<option value="Suriname">Suriname</option> 
+
+<option value="South Korea">South Korea</option>
+
+<option value="Swaziland">Swaziland</option> 
+
+<option value="Sweden">Sweden</option> 
+
+<option value="Switzerland">Switzerland</option> 
+
+<option value="Syria">Syria</option> 
+
+<option value="Taiwan">Taiwan</option> 
+
+<option value="Tajikistan">Tajikistan</option> 
+
+<option value="Tanzania">Tanzania</option>
+
+<option value="Thailand">Thailand</option>
+
+<option value="Togo">Togo</option>
+
+<option value="Trinidad & Tobago">Trinidad & Tobago</option> 
+
+<option value="Tunisia">Tunisia</option> 
+
+<option value="Turkey">Turkey</option> 
+
+<option value="Turkmenistan">Turkmenistan</option> 
+
+<option value="Uganda">Uganda</option> 
+
+<option value="Ukraine">Ukraine</option> 
+
+<option value="United Arab Emirates">United Arab Emirates</option> 
+
+<option value="United Kingdom">United Kingdom</option>
+
+<option value="United States">United States</option>
+
+<option value="Uganda">Uganda</option> 
+
+<option value="Uruguay">Uruguay</option> 
+
+<option value="Uzbekistan">Uzbekistan</option> 
+
+<option value="Venezuela">Venezuela</option> 
+
+<option value="Vietnam">Vietnam</option>
+
+<option value="Yemen">Yemen</option> 
+
+<option value="Zambia">Zambia</option>
+
+<option value="Zimbabwe">Zimbabwe</option>
+
+</select>
+
+</td>
+
+							</tr>
+
+<tr>
+
+								<td width="59%" align="left" valign="middle"><select name="category" id="category" onchange="javascript: dropdownlist(this.options[this.selectedIndex].value);">
+
+<option value="Select Category">Select Category</option>
+
+<option value="Academic Documents">Academic Documents</option>
+
+<option value="Corporate Documents">Corporate Documents</option>
+
+<option value="Personal Documents">Personal Documents</option>
+
+<option value="Export Documents">Export Documents</option>
+
+</select></td>
+
+							</tr>
+
+<tr>
+
+								<td align="left" valign="middle" width="59%"><script type="text/javascript" language="JavaScript">
+
+document.write('<select name="subdocument"><option value="Select Sub-Document">Select Sub-Document</option></select>')
+
+</script>
+
+<noscript><select name="subdocument" id="subdocument" >
+
+<option value="">Select Sub-Document</option>
+
+</select>
+
+</noscript></td>
+
+							</tr>
+
+<tr>
+
+								<td width="59%"><input type="text" id="firstname" name="firstname" value="your first name" class="blurfocus" /></td>
+
+							</tr>
+
+<tr>
+
+								<td width="59%"><input type="text" id="lastname" name="lastname" value="your last name" class="blurfocus" /></td>
+
+							</tr>
+
+<tr>
+
+								<td width="59%"><input type="text" id="email" name="email" value="your e-mail" class="blurfocus" /></td>
+
+							</tr>
+
+<tr>
+
+								<td width="59%">
+
+									<div align="center">
+
+										<input type="submit" id="Submit" name="Submit" value="Submit" /></div>
+
+								</td>
+
+							</tr>
+
+</table>
+
+
+
+
+
+
+
+</form>
+
+</div>
+
+<?php } ?>
+
+                                </td>
+			</tr>
+		</table>

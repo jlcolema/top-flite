@@ -1,0 +1,131 @@
+<p class="note">All fields required unless noted.</p>
+
+<fieldset class="personal">
+
+	<legend>Personal Information</legend>
+
+	<ol>
+		<li>
+			<span class="label">Name</span>
+			[text* first-name] [text* last-name]
+		</li>
+		<li>
+			<span class="label">Email</span>
+			[email* your-email]
+		</li>
+		<li>
+			<span class="label">Phone Number</span>
+			[text* phonenumber]
+		</li>
+	</ol>
+
+</fieldset>
+
+<fieldset class="mailing-address">
+
+	<legend>Mailing address</legend>
+
+	<ol>
+		<li>
+			<span class="label">Street Address</span>
+			[text* address1]
+		</li>
+		<li>
+			<span class="label">City / State / Zip Code</span>
+			[text* city] [select* state "AL" "AK" "AZ" "AR" "CA" "CO" "CT" "DE" "FL" "GA" "HI" "ID" "IL" "IN" "IA" "KS" "KY" "LA" "ME" "MD" "MA" "MI" "MN" "MS" "MO" "MT" "NE" "NV" "NH" "NJ" "NM" "NY" "NC" "ND" "OH" "OK" "OR" "PA" "RI" "SC" "SD" "TN" "TX" "UT" "VT" "VA" "WA" "WV" "WI" "WY"] [text* region]
+		</li>
+		<li>
+			<span class="label">Country</span>
+			[select* menu-807 "Antigua & Barbuda"]
+		</li>
+
+	</ol>
+
+</fieldset>
+
+<fieldset class="delivery">
+
+	<legend>Delivery Information</legend>
+
+	<ol>
+		<li>
+			<span class="label">Courier Name / Account No. (Optional)</span>
+			[text* courier account no.]
+		</li>
+
+	</ol>
+
+</fieldset>
+
+<fieldset class="documents-to-apostille">
+
+	<legend>Documents To Apostille</legend>
+
+	<ol>
+		<li class="options corporate-documents-to-apostille">
+			<span class="label">Corporate Documents</span>
+			[select menu-902 "Please Select One" "Affidavits" "Agency agreements" "Authorizations of agent" "Board of directors" "Business licenses" "Cash balance statements" "Certificates of authenticity" "Certificates of conformity" "Certified copies of US passport" "Company bylaws" "Declaration letters" "Deeds of assignment" "Financial statements" "Good standing certificates" "ISO certificates" "Manufacturing licenses" "Minutes of board meeting" "Powers of attorney" "Shelf life certificates" "Written statements"]
+		</li>
+		<li class="options academic-documents-to-apostille">
+			<span class="label">Academic Documents</span>
+			[select menu-215 "Please Select One" "Authorization letters" "Bar certificates" "Degrees" "Diplomas" "Official transcripts" "Practice licenses for nurses and physicians" "School Accreditation letters" "Statements of study major" "Teaching certifications" "Verification letters from the registrar’s office"]
+		</li>
+		<li class="options personal-documents-to-apostille">
+			<span class="label">Personal Documents</span>
+			[select menu-290 "Please Select One" "Birth certificates" "Certificates of no marriage record" "Certificates report of birth abroad" "Change of names" "Children’s travel consent letters" "Copy of employment contracts" "Copy of passports" "Criminal records" "Death certificates" "Divorce certificates" "Driver licenses" "Marital status" "Marriage certificates" "Medical records" "Powers of attorney" "Single status affidavits" "Letter of references"]
+		</li>
+		<li class="options export-documents-to-apostille">
+			<span class="label">Export Documents</span>
+			[select menu-188 "Please Select One" "Bills of lading" "Certificates of analysis" "Certificates of origin" "Commercial invoices" "Freezing certificates" "Packing lists" "Price lists" "Radiation certificates"]
+		</li>
+		<li class="total-number-of-documents">
+			<span class="label">Total Number of Documents</span>
+			<p class="note">More than 4? Please email us at <a href="mailto:info@topflitelegalization.com">info@topflitelegalization.com</a>.</p>
+			[text* documents]
+		</li>
+		<li>
+			<span class="label">Targeted Country</span>
+			[select* menu-557 "Please Select One" "Albania" "Antigua" "Argentina" "Armenia" "Australia" "Austria" "Azerbaijan" "Bahamas" "Belarus" "Belgium" "Belize" "Bosnia" "Botswana" "Bulgaria" "Colombia" "Costa Rica" "Croatia" "Cyprus" "Czech" "Dominican Republic" "Ecuador" "El Salvador" "Estonia" "Fiji Islands" "Finland" "France" "Georgia" "Germany" "Greece" "Honduras" "Hong Kong" "Hungary" "India" "Italy" "Ireland" "Israel" "Japan" "Kazakhstan" "Kirgyzstan" "Korea" "Latvia" "Lesotho" "Lithuania" "Luxembourg" "Macedonia" "Malawi" "Malta" "Marshall Islands" "Mauritius" "Mexico" "Moldova" "Netherlands" "New Zealand" "Norway" "Oman" "Panama" "Peru" "Portugal" "Poland" "Romania" "Russia" "Serbia" "Slovakia" "Slovenia" "Spain" "South Africa" "Suriname" "Swaziland" "Sweden" "Switzerland" "Tonga" "Trinidad" "Turkey" "Ukraine" "United Kingdom" "Uzbekistan" "Venezuela"]
+		</li>
+		<li class="upload-documents">
+			<span class="label">Upload Documents</span>
+			<p class="note">Please upload the documents you need to apostille. We accept JPG, PDF, or Word documents only up to 10MB.</p>
+			[file file-932]
+			[file file-461]
+			[file file-923]
+			[file file-525]
+		</li>
+
+	</ol>
+
+</fieldset>
+
+<fieldset class="rush-apostille-fees">
+
+	<legend>Rush Apostille Fees</legend>
+
+	<p class="note">$90 US Dollars per apostille</p>
+
+	<ol>
+
+		<li>
+			<span class="label">Please select the total amount</span>
+			[select* menu-367 "Please Select One" "$90 per apostille (please provide your courier account if you wish to waive the return cost)" "$90 per apostille (plus one-time charge of $40 for FedEx domestic return cost)" "$90 per apostille (plus one-time charge of $85 for FedEx international return cost)"]
+		</li>
+		<li class="payment-method">
+			<span class="label">Payment method</span>
+			[checkbox* checkbox-343 "Visa" "Mastercard" "AmEx" "PayPal (we will email you specific payment instructions within 5 business hours)"]
+		</li>
+		<li>
+			<span class="label">Special Instructions (Optional)</span>
+			[textarea your-message]
+		</li>
+		<li>[captchac captcha-43] [captchar captcha-43]</li>
+
+	</ol>
+
+</fieldset>
+
+<p class="note send-once">Please only hit <strong>Send</strong> once.</p>
+
+[submit "Send"]
